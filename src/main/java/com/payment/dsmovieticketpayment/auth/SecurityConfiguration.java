@@ -45,12 +45,11 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 
         http.addFilterBefore(filter , UsernamePasswordAuthenticationFilter.class);
-
-        //Disable CSRF Token and Allows Routeing api/v1/auth/login URL and Block Other All Requests
     }
 
     @Bean
     public PasswordEncoder passwordEncoder(){
         return new BCryptPasswordEncoder();
     }
+
 }

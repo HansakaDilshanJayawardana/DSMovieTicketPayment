@@ -10,7 +10,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
-//import javax.validation.constraints.Size;
+import javax.validation.constraints.Size;
 import java.util.Collection;
 
 @Data
@@ -39,7 +39,7 @@ public class UserEntity implements UserDetails {
     private String email;
 
     @Column(name = "phone" , nullable = false)
-//    @Size(min = 3, max = 15)
+    @Size(min = 3, max = 15)
     private String phone;
 
     @Column(name = "address" , nullable = true)
